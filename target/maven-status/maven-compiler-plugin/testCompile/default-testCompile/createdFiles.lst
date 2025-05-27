@@ -1,0 +1,6 @@
+com\automation\framework\frontend\GoogleSearchTestNew.class
+com\automation\framework\frontend\LandingPageTest.class
+com\automation\framework\frontend\GoogleSearchTest.class
+com\automation\framework\backend\BaseApiTest.class
+com\automation\framework\frontend\BasePlaywrightTest.class
+com\automation\framework\frontend\LoginTest.class
