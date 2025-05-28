@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-public class CreateNewCustomer extends BasePlaywrightTest {
+public class CreateNewCustomerTest extends BasePlaywrightTest {
 
     @Test
     void createNewCustomer() {
@@ -21,7 +21,7 @@ public class CreateNewCustomer extends BasePlaywrightTest {
         createNewAccountPage.clickCreateAccount();
         assertThat(page).hasURL(createNewAccountPage.getCurrentUrl());
 
-        assertThat(createNewAccountPage.logInConfirmation(firstName));
+        assertThat(createNewAccountPage.createdUserName(firstName)).isVisible();
         TestUtils.logMessage("User " + firstName + " successfully created and logged in");
     }
 }

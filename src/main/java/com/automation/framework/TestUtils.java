@@ -2,7 +2,7 @@ package com.automation.framework;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Random; // Import Random class
+import java.util.Random;
 import java.util.UUID;
 
 public class TestUtils {
@@ -42,9 +42,6 @@ public class TestUtils {
 
     /**
      * Generates a random username with a prefix and a random alphanumeric suffix.
-     *
-     * @param prefix The prefix for the username (e.g., "user_").
-     * @param length The desired length of the random alphanumeric suffix.
      * @return A randomly generated username.
      */
     public static String generateRandomString(String prefix, String suffix) {

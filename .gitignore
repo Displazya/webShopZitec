@@ -38,10 +38,6 @@ ehthumbs.db
 Thumbs.db
 
 # Playwright browser binaries
-# Playwright downloads browsers to a default location or a configured one.
-# Exclude them to keep repository size small.
-# Default location is ~/.cache/ms-playwright/
-# If you configure a different location, add it here.
 .cache/
 ms-playwright/
 

@@ -12,6 +12,7 @@ public class ConfigReader {
      * @param key The key of the property to retrieve.
      * @return The value of the above mentioned key
      */
+    //Todo refactor ClassLoader usage
     public static String getProperty(String key) {
         Properties properties = new Properties();
         try (InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream("frontend.properties")) {
@@ -28,7 +29,7 @@ public class ConfigReader {
     }
 
 
-/*    //Todo throw explicit exception? Spring?
+/*    //Todo throw explicit exception? gauge runner needed for this?
     public static String getEnv(String... keys){
         return Arrays.stream(keys)
                 .map(System::getenv)

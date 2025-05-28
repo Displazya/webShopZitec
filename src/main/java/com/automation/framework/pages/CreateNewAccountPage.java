@@ -1,5 +1,6 @@
 package com.automation.framework.pages;
 
+import com.automation.framework.ConfigReader;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
@@ -11,6 +12,7 @@ public class CreateNewAccountPage {
     private final Locator passwordInput;
     private final Locator confirmPasswordInput;
     private final Locator createButton;
+    private final static String createNewAccountUrl = "/customer/account/create/";
 
 
     public CreateNewAccountPage(Page page) {
@@ -24,14 +26,14 @@ public class CreateNewAccountPage {
     }
 
     public void navigateToCreateAccountPage() {
-        page.navigate("https://magento.softwaretestingboard.com/customer/account/create/");
+        page.navigate(ConfigReader.getProperty("frontend.homepage") + createNewAccountUrl);
     }
 
     public void createNewAccount(String firstName,
                                  String lastName,
                                  String email,
                                  String password
-                                 ) {
+    ) {
         firstNameInput.fill(firstName);
         lastNameInput.fill(lastName);
         emailInput.fill(email);
@@ -39,7 +41,7 @@ public class CreateNewAccountPage {
         confirmPasswordInput.fill(password);
     }
 
-    public void clickCreateAccount(){
+    public void clickCreateAccount() {
         createButton.click();
     }
 
@@ -47,7 +49,7 @@ public class CreateNewAccountPage {
         return page.url();
     }
 
-    public Locator logInConfirmation(String expectedUsername) {
+    public Locator createdUserName(String expectedUsername) {
         return page.locator("div.box-content").filter(new Locator.FilterOptions().setHasText(expectedUsername));
     }
 }
