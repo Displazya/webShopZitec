@@ -22,6 +22,6 @@ public class AddProductToCartTest extends BasePlaywrightTest {
 
         shoppingCartPage.navigateToCart();
         assertThat(menJacketsPage.getProteusJacket()).isVisible();
-        //TestUtils.logMessage("User " + firstName + " successfully created and logged in");
+        TestUtils.logMessage("Product " + menJacketsPage.getProteusJacket() + " is in cart");
     }
 }
