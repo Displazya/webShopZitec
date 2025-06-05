@@ -13,7 +13,7 @@ This project provides an automation framework built with Java 21, Playwright for
 
 1.  **Clone the repository:**
     ```bash
-    git clone <https://github.com/Displazya>
+    git clone git@github.com:Displazya/webShopZitec.git
     cd automation-framework
     ```
 2.  **Install Playwright browsers:**
