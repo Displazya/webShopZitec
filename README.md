@@ -1,13 +1,19 @@
 # Automation Framework for Zitec
 
-This project provides an automation framework built with Java 21, Playwright for frontend testing, and hopefully Rest Assured for backend testing. Maven is used as the build tool.
+Automation framework built with Java 21, Playwright for fronend and Rest Assured for backend API testing. Maven is used as build tool and Lombok.
 
+## Key Features
+
+*   **Frontend Testing:** Playwright for browser automation
+*   **Backend API Testing:** Rest Assured for testing RESTful APIs
+*   **Configurable Environment:** Properties file for backend and frontend variables
+*   **Structured Payloads:** Java objects with Lombok
 
 ## Prerequisites
 
-*   Java Development Kit (JDK) 21 or higher
-*   Maven 3.6.0 or higher
-*   Lombok Plugin 
+*   Java 21
+*   Maven 3.6.0
+*   Lombok Plugin
 
 ## Setup
 
@@ -25,6 +31,7 @@ This project provides an automation framework built with Java 21, Playwright for
     ```bash
     mvn clean install
     ```
+    **Note:** Test execution is skipped during `mvn clean install` by default.
 
 ## Running Tests
 
@@ -36,31 +43,44 @@ To run all tests (frontend and backend), execute the following Maven command:
 mvn clean test
 ```
 
-### Run specific frontend tests
-
-To run only frontend tests, you can use the `test` goal with a specific test class:
-
-```bash
-mvn test -Dtest=CreateNewCustomer
-mvn test -Dtest=LoginTest
-```
-
-### Run specific backend tests
-
-To run only backend tests, you can use the `test` goal with a specific test class:
-
-```bash
-# Example: If you had a BackendSampleTest.java
-# mvn test -Dtest=BackendSampleTest
-```
 
 ## Framework Components
 
 ### Core Utilities
 
-*  To add
+*   [`ConfigReader.java`](src/main/java/com/automation/framework/ConfigReader.java): Utility for reading properties
+*   [`TestUtils.java`](src/main/java/com/automation/framework/TestUtils.java): Util methods
+
+
+### Page Objects (Frontend)
+
+*   [`CreateNewAccountPage.java`](src/main/java/com/automation/framework/pages/CreateNewAccountPage.java)
+*   [`MenJacketsPage.java`](src/main/java/com/automation/framework/pages/MenJacketsPage.java)
+*   [`ShoppingCartPage.java`](src/main/java/com/automation/framework/pages/ShoppingCartPage.java)
+
+### API Payloads
+
+*   [`CustomerPayload.java`](src/main/java/com/automation/framework/payloads/magento/CustomerPayload.java): Java object for customer
+
+### Test Cases
+
+*   **Frontend Examples:**
+    *   `AddProductToCartTest.java`
+    *   `CreateNewCustomerTest.java`
+    *   `IntegrationTest.java`
+*   **Backend Examples:**
+    *   `CreateApiCustomerTest.java`: Focuses on creating a new API customer.
+
+## Configuration Files
+
+*   [`frontend.properties`](src/main/resources/frontend.properties): Browser mode, homepage, etc
+*   [`backend.properties`](src/main/resources/backend.properties): Base URL, token
 
 ## Extending the Framework
 
-*   Add HTML test reports via surefire?
-*   Expand logging
+*   **Add HTML test reports:** 
+*   **Expand logging:** Maybe add logging library? Log4J or?
+*   **Implement retry mechanisms:** Maybe retry method/logic for front end
+*   **Integrate CI/CD:** Set up Jenkins file 
+*   **Improve username/email/pwd generators** 
+*   **Confluence** Add confluence link with usage, clean code practices, examples, etc

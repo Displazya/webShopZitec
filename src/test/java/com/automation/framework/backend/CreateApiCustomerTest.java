@@ -52,7 +52,9 @@ public class CreateApiCustomerTest extends BaseApiTest {
 
         Response response = RestAssured.given()
                 .header("Content-Type", "application/json")
-                .header("Authorization", "Bearer " + ConfigReader.getProperty("backend.properties", "magento.admin.token"))
+                .header("Authorization", "Bearer " + ConfigReader.getProperty(
+                        "backend.properties",
+                        "softwareTestingBoard.admin.token"))
                 .body(payload)
                 .when()
                 .post("/rest/default/V1/customers")

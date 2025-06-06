@@ -3,5 +3,7 @@ com\automation\framework\pages\CreateNewAccountPage.class
 com\automation\framework\TestUtils.class
 com\automation\framework\ConfigReader.class
 com\automation\framework\pages\MenJacketsPage.class
-com\automation\framework\pages\GooglePage.class
-com\automation\framework\pages\LoginPage.class
+com\automation\framework\payloads\CustomerPayload$Address.class
+com\automation\framework\payloads\CustomerPayload$Region.class
+com\automation\framework\payloads\CustomerPayload.class
+com\automation\framework\payloads\CustomerPayload$Customer.class
