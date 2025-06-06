@@ -13,16 +13,15 @@ public class ConfigReader {
      * @return The value of the above mentioned key
      */
     //Todo refactor ClassLoader usage
-    public static String getProperty(String key) {
+    public static String getProperty(String fileName, String key) {
         Properties properties = new Properties();
-        try (InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream("frontend.properties")) {
+        try (InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream(fileName)) {
             if (input == null) {
                 return null;
             }
             properties.load(input);
             return properties.getProperty(key);
         } catch (IOException e) {
-            System.err.println("Error reading 'frontend.properties': " + e.getMessage());
             e.printStackTrace();
             return null;
         }

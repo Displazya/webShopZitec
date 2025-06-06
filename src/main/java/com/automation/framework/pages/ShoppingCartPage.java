@@ -18,7 +18,7 @@ public class ShoppingCartPage {
     }
 
     public void navigateToCart() {
-        page.navigate(ConfigReader.getProperty("frontend.homepage") + cartUrl);
+        page.navigate(ConfigReader.getProperty("frontend.properties","frontend.homepage") + cartUrl);
     }
 
     public void clickProceedToCheckout() {

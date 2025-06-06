@@ -45,3 +45,41 @@ ms-playwright/
 surefire-reports/
 allure-results/
 allure-report/
+
+# Java specific
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*.log
+
+# Temporary files
+*.bak
+*.tmp
+*.swp
+*~
+
+# Other build output directories
+out/
+bin/
+
+# Java specific
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*.log
+
+# Temporary files
+*.bak
+*.tmp
+*.swp
+*~
+
+# Other build output directories
+out/
+bin/

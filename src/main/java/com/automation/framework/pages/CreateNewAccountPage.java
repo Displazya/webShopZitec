@@ -26,7 +26,7 @@ public class CreateNewAccountPage {
     }
 
     public void navigateToCreateAccountPage() {
-        page.navigate(ConfigReader.getProperty("frontend.homepage") + createNewAccountUrl);
+        page.navigate(ConfigReader.getProperty("frontend.properties","frontend.homepage") + createNewAccountUrl);
     }
 
     public void createNewAccount(String firstName,

@@ -10,7 +10,7 @@ public class LandingPageTest extends BasePlaywrightTest {
 
     @Test
     void verifyLandingPage() {
-        page.navigate(ConfigReader.getProperty("frontend.homepage"));
+        page.navigate(ConfigReader.getProperty("frontend.properties", "frontend.homepage"));
         assertThat(page).hasTitle("Home Page");
 
         //String randomUsername = TestUtils.generateRandomUsername("test", 10);

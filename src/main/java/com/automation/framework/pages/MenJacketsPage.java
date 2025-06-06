@@ -30,7 +30,7 @@ public class MenJacketsPage {
     }
 
     public void navigateToMensJackets() {
-        page.navigate(ConfigReader.getProperty("frontend.homepage") + mensJacketUrl);
+        page.navigate(ConfigReader.getProperty("frontend.properties", "frontend.homepage") + mensJacketUrl);
     }
 
     public void selectProteusJacket() {

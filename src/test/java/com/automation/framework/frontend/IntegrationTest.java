@@ -19,7 +19,7 @@ public class IntegrationTest extends BasePlaywrightTest {
 
 
         //Verify homepage
-        page.navigate(ConfigReader.getProperty("frontend.homepage"));
+        page.navigate(ConfigReader.getProperty("frontend.properties","frontend.homepage"));
         assertThat(page).hasTitle("Home Page");
 
         //Create a new customer and verify that is logged in
