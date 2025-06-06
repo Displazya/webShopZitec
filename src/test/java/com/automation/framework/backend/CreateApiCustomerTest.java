@@ -2,10 +2,10 @@ package com.automation.framework.backend;
 
 import com.automation.framework.ConfigReader;
 import com.automation.framework.TestUtils;
-import com.automation.framework.payloads.CustomerPayload;
-import com.automation.framework.payloads.CustomerPayload.Address;
-import com.automation.framework.payloads.CustomerPayload.Customer;
-import com.automation.framework.payloads.CustomerPayload.Region;
+import com.automation.framework.payloads.customer.Address;
+import com.automation.framework.payloads.customer.Customer;
+import com.automation.framework.payloads.customer.CustomerPayload;
+import com.automation.framework.payloads.customer.Region;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -24,7 +24,10 @@ public class CreateApiCustomerTest extends BaseApiTest {
     @Test
     public void createNewApiCustomer() {
         TestUtils.logMessage("Starting createNewApiCustomer with email: " + customerEmail);
-        Region region = new Region("NY", "New York", 43);
+        Region region = new Region(
+                "NY",
+                "New York",
+                43);
 
         Address customerAddress = new Address(
                 true,
