@@ -60,7 +60,7 @@ mvn clean test
 
 ### API Payloads
 
-*   [`CustomerPayload.java`](src/main/java/com/automation/framework/payloads/CustomerPayload.java): Java object for customer
+*   [`CustomerObjects`](src/main/java/com/automation/framework/payloads/customer): Java objects for customer
 
 ### Test Cases
 
